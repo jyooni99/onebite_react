@@ -7,7 +7,7 @@ function Button() {
   };
   return (
     <>
-      <p>c ount: {count}</p>
+      <p>count: {count}</p>
       <button onClick={upCount}>1씩 추가</button>
     </>
   );
