@@ -1,17 +1,13 @@
 import React from "react";
 
-function Controller({ count, setCount }) {
+function Controller({ handleCount }) {
   const countArr = [-1, -10, -100, +100, +10, +1];
-
-  function handleCount(e) {
-    setCount(count + Number(e.target.id));
-  }
 
   return (
     <div className="btnBox">
       {countArr.map((count, index) => {
         return (
-          <button key={index} id={count} onClick={handleCount}>
+          <button key={index} value={count} onClick={(e) => handleCount(e)}>
             {count}
           </button>
         );
