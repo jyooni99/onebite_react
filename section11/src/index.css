@@ -1,6 +1,11 @@
 @font-face {
-  font-family: "NanumPenScript";
-  src: url("/NanumPenScript-Regular.ttf");
+  font-family: "ladywatermelon";
+  src: url("/Rix X ladywatermelon Regular.ttf");
+}
+
+@font-face {
+  font-family: "SejongGeulggot";
+  src: url("/SejongGeulggot.otf");
 }
 
 html,
@@ -22,5 +27,5 @@ body {
 }
 
 body * {
-  font-family: "NanumPenScript";
+  font-family: "ladywatermelon";
 }
