@@ -13,6 +13,7 @@ const getMonthlyData = (pivotDate, data) => {
     0,
     0
   ).getTime();
+
   const endTime = new Date(
     pivotDate.getFullYear(),
     pivotDate.getMonth() + 1,
@@ -21,6 +22,7 @@ const getMonthlyData = (pivotDate, data) => {
     59,
     59
   ).getTime();
+
   return data.filter(
     (item) => beginTime <= item.createdDate && item.createdDate <= endTime
   );
@@ -28,11 +30,11 @@ const getMonthlyData = (pivotDate, data) => {
 
 const Home = () => {
   const data = useContext(DiaryStateContext);
-  const [pivotDate, setPivotDate] = useState(new Date()); // 날짜를 보관하는 state
+  const [pivotDate, setPivotDate] = useState(new Date());
 
   const monthlyData = getMonthlyData(pivotDate, data);
 
-  const onIncreateMonth = () => {
+  const onIncreaseMonth = () => {
     setPivotDate(new Date(pivotDate.getFullYear(), pivotDate.getMonth() + 1));
   };
   const onDecreaseMonth = () => {
@@ -44,7 +46,7 @@ const Home = () => {
       <Header
         title={`${pivotDate.getFullYear()}년 ${pivotDate.getMonth() + 1}월`}
         leftChild={<Button text={"<"} onClick={onDecreaseMonth} />}
-        rightChild={<Button text={">"} onClick={onIncreateMonth} />}
+        rightChild={<Button text={">"} onClick={onIncreaseMonth} />}
       />
       <DiaryList data={monthlyData} />
     </div>
