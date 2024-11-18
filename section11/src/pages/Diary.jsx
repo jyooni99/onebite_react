@@ -4,11 +4,13 @@ import Button from "../components/Button";
 import Viewer from "../components/Viewer";
 import { useDiary } from "../hooks/useDiary";
 import { getStringedDate } from "../util/get-stringed-date";
+import usePageTitle from "../hooks/usePageTitle";
 
 const Diary = () => {
   const { id } = useParams();
   const nav = useNavigate();
   const diaryItem = useDiary(id);
+  usePageTitle(`${id}번 일기`);
 
   if (!diaryItem) {
     return <div>데이터 로딩중 ...</div>;
